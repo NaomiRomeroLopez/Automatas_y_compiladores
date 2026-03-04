@@ -404,29 +404,28 @@ Función de transición δ:
 δ(start,c) = s1    
 δ(s1,a) = s1  
 δ(s1,b) = s4  
-δ(s1,c) = s  
-δ(s2,a) = s5  
+δ(s1,c) = s2  
+δ(s2,a) = s2  
 δ(s2,b) = s5  
-δ(s2,c) = s3  
-δ(s3,a) = s5  
-δ(s3,b) = s5  
+δ(s2,c) = start
+δ(s3,a) = s3  
+δ(s3,b) = start  
 δ(s3,c) = s4  
-δ(s4,a) = s5  
-δ(s4,b) = s5  
-δ(s4,c) = s2  
+δ(s4,a) = s4  
+δ(s4,b) = s1  
+δ(s4,c) = s5  
 δ(s5,a) = s5  
-δ(s5,b) = s5  
-δ(s5,c) = s5  
+δ(s5,b) = s2  
+δ(s5,c) = s3  
 
 *Tabla de trasnsición de estados*
-| Estado  | a  | b  | c  |
-| ------- | -- | -- | -- |
-| → start | s0 | s1 | s2 |
-| * s0    | s0 | s1 | s2 |
-| s1      | s1 | s0 | s5 |
-| s2      | s5 | s5 | s3 |
-| s3      | s5 | s5 | s4 |
-| * s4    | s5 | s5 | s2 |
-| s5      | s5 | s5 | s5 |
+| Estado    | a      | b      | c      |
+|-----------|--------|--------|--------|
+| → * start | start  | s3     | s1     |
+| s1        | s1     | s4     | s2     |
+| s2        | s2     | s5     | start  |
+| s3        | s3     | start  | s4     |
+| s4        | s4     | s1     | s5     |
+| s5        | s5     | s2     | s3     |
 
 <img width="1919" height="910" alt="Captura de pantalla 2026-03-03 200028" src="https://github.com/user-attachments/assets/aacbdb63-6ed7-4d6e-9012-cc5c226e9471" />
