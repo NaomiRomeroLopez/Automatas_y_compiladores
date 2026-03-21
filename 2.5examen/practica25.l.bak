@@ -1,0 +1,178 @@
+%option noyywrap
+%{
+	#include<stdio.h>
+%}
+DIGITO      [0-9]
+LETRA       [a-zA-Z]
+ID          [a-zA-Z_][a-zA-Z0-9_]*
+
+INTEGERLIT  0|[1-9][0-9_]*([lL])?
+FLOATLIT    [0-9][0-9_]*\.[0-9][0-9_]*([eE][+-]?[0-9]+)?([fFdD])?
+
+HEXADECIMALLIT   0[xX][0-9a-fA-F][0-9a-fA-F_]*([lL])?
+BINARYLIT        0[bB][01][01_]*([lL])?
+OCTALLIT         0[0-7]+([lL])?
+
+STRINGLIT   \"([^\"\\]|\\.)*\"
+CHARLIT     \'([^\'\\]|\\.)\'
+
+
+SIMPLEOP     [+\-*/%<>=!&\|^~?:]
+SEPARATOR   [(){}\[\];,.]
+
+LINECOMMENT   "//"[^\n]*
+BLOCKCOMMENT  "/*"([^*]|\*+[^*/])*\*+\/
+
+%%
+"alignas"        { fprintf(yyout, "KEYWORD: alignas\n"); }
+"alignof"        { fprintf(yyout, "KEYWORD: alignof\n"); }
+"and"            { fprintf(yyout, "KEYWORD: and\n"); }
+"and_eq"         { fprintf(yyout, "KEYWORD: and_eq\n"); }
+"asm"            { fprintf(yyout, "KEYWORD: asm\n"); }
+
+"auto"           { fprintf(yyout, "KEYWORD: auto\n"); }
+"bitand"         { fprintf(yyout, "KEYWORD: bitand\n"); }
+"bitor"          { fprintf(yyout, "KEYWORD: bitor\n"); }
+"bool"           { fprintf(yyout, "KEYWORD: bool\n"); }
+"break"          { fprintf(yyout, "KEYWORD: break\n"); }
+
+"case"           { fprintf(yyout, "KEYWORD: case\n"); }
+"catch"          { fprintf(yyout, "KEYWORD: catch\n"); }
+"char"           { fprintf(yyout, "KEYWORD: char\n"); }
+"char8_t"        { fprintf(yyout, "KEYWORD: char8_t\n"); }
+"char16_t"       { fprintf(yyout, "KEYWORD: char16_t\n"); }
+"char32_t"       { fprintf(yyout, "KEYWORD: char32_t\n"); }
+
+"class"          { fprintf(yyout, "KEYWORD: class\n"); }
+"compl"          { fprintf(yyout, "KEYWORD: compl\n"); }
+"concept"        { fprintf(yyout, "KEYWORD: concept\n"); }
+"const"          { fprintf(yyout, "KEYWORD: const\n"); }
+"consteval"      { fprintf(yyout, "KEYWORD: consteval\n"); }
+"constexpr"      { fprintf(yyout, "KEYWORD: constexpr\n"); }
+"constinit"      { fprintf(yyout, "KEYWORD: constinit\n"); }
+"const_cast"     { fprintf(yyout, "KEYWORD: const_cast\n"); }
+"continue"       { fprintf(yyout, "KEYWORD: continue\n"); }
+
+"co_await"       { fprintf(yyout, "KEYWORD: co_await\n"); }
+"co_return"      { fprintf(yyout, "KEYWORD: co_return\n"); }
+"co_yield"       { fprintf(yyout, "KEYWORD: co_yield\n"); }
+
+"decltype"       { fprintf(yyout, "KEYWORD: decltype\n"); }
+"default"        { fprintf(yyout, "KEYWORD: default\n"); }
+"delete"         { fprintf(yyout, "KEYWORD: delete\n"); }
+"do"             { fprintf(yyout, "KEYWORD: do\n"); }
+"double"         { fprintf(yyout, "KEYWORD: double\n"); }
+"dynamic_cast"   { fprintf(yyout, "KEYWORD: dynamic_cast\n"); }
+"else"           { fprintf(yyout, "KEYWORD: else\n"); }
+
+"enum"           { fprintf(yyout, "KEYWORD: enum\n"); }
+"explicit"       { fprintf(yyout, "KEYWORD: explicit\n"); }
+"export"         { fprintf(yyout, "KEYWORD: export\n"); }
+"extern"         { fprintf(yyout, "KEYWORD: extern\n"); }
+"false"          { fprintf(yyout, "KEYWORD: false\n"); }
+
+"float"          { fprintf(yyout, "KEYWORD: float\n"); }
+"for"            { fprintf(yyout, "KEYWORD: for\n"); }
+"friend"         { fprintf(yyout, "KEYWORD: friend\n"); }
+"goto"           { fprintf(yyout, "KEYWORD: goto\n"); }
+"if"             { fprintf(yyout, "KEYWORD: if\n"); }
+
+"inline"         { fprintf(yyout, "KEYWORD: inline\n"); }
+"int"            { fprintf(yyout, "KEYWORD: int\n"); }
+"long"           { fprintf(yyout, "KEYWORD: long\n"); }
+"mutable"        { fprintf(yyout, "KEYWORD: mutable\n"); }
+"namespace"      { fprintf(yyout, "KEYWORD: namespace\n"); }
+
+"new"            { fprintf(yyout, "KEYWORD: new\n"); }
+"noexcept"       { fprintf(yyout, "KEYWORD: noexcept\n"); }
+"not"            { fprintf(yyout, "KEYWORD: not\n"); }
+"not_eq"         { fprintf(yyout, "KEYWORD: not_eq\n"); }
+"nullptr"        { fprintf(yyout, "KEYWORD: nullptr\n"); }
+
+"operator"       { fprintf(yyout, "KEYWORD: operator\n"); }
+"or"             { fprintf(yyout, "KEYWORD: or\n"); }
+"or_eq"          { fprintf(yyout, "KEYWORD: or_eq\n"); }
+
+"private"        { fprintf(yyout, "KEYWORD: private\n"); }
+"protected"      { fprintf(yyout, "KEYWORD: protected\n"); }
+"public"         { fprintf(yyout, "KEYWORD: public\n"); }
+
+"register"       { fprintf(yyout, "KEYWORD: register\n"); }
+"reinterpret_cast" { fprintf(yyout, "KEYWORD: reinterpret_cast\n"); }
+"return"         { fprintf(yyout, "KEYWORD: return\n"); }
+"requires"       { fprintf(yyout, "KEYWORD: requires\n"); }
+
+"short"          { fprintf(yyout, "KEYWORD: short\n"); }
+"signed"         { fprintf(yyout, "KEYWORD: signed\n"); }
+"sizeof"         { fprintf(yyout, "KEYWORD: sizeof\n"); }
+"static"         { fprintf(yyout, "KEYWORD: static\n"); }
+"static_assert"  { fprintf(yyout, "KEYWORD: static_assert\n"); }
+"static_cast"    { fprintf(yyout, "KEYWORD: static_cast\n"); }
+
+"struct"         { fprintf(yyout, "KEYWORD: struct\n"); }
+"switch"         { fprintf(yyout, "KEYWORD: switch\n"); }
+"template"       { fprintf(yyout, "KEYWORD: template\n"); }
+"this"           { fprintf(yyout, "KEYWORD: this\n"); }
+
+"thread_local"   { fprintf(yyout, "KEYWORD: thread_local\n"); }
+"throw"          { fprintf(yyout, "KEYWORD: throw\n"); }
+"true"           { fprintf(yyout, "KEYWORD: true\n"); }
+"try"            { fprintf(yyout, "KEYWORD: try\n"); }
+"typedef"        { fprintf(yyout, "KEYWORD: typedef\n"); }
+
+"typeid"         { fprintf(yyout, "KEYWORD: typeid\n"); }
+"typename"       { fprintf(yyout, "KEYWORD: typename\n"); }
+"union"          { fprintf(yyout, "KEYWORD: union\n"); }
+"unsigned"       { fprintf(yyout, "KEYWORD: unsigned\n"); }
+"using"          { fprintf(yyout, "KEYWORD: using\n"); }
+
+"virtual"        { fprintf(yyout, "KEYWORD: virtual\n"); }
+"void"           { fprintf(yyout, "KEYWORD: void\n"); }
+"volatile"       { fprintf(yyout, "KEYWORD: volatile\n"); }
+"wchar_t"        { fprintf(yyout, "KEYWORD: wchar_t\n"); }
+"while"          { fprintf(yyout, "KEYWORD: while\n"); }
+
+"xor"            { fprintf(yyout, "KEYWORD: xor\n"); }
+"xor_eq"         { fprintf(yyout, "KEYWORD: xor_eq\n"); }
+
+{INTEGERLIT}     { fprintf(yyout, "INTEGER: %s\n", yytext); }
+{FLOATLIT}       { fprintf(yyout, "FLOAT: %s\n", yytext); }
+{HEXADECIMALLIT} { fprintf(yyout, "HEX: %s\n", yytext); }
+{BINARYLIT}      { fprintf(yyout, "BINARY: %s\n", yytext); }
+{OCTALLIT}       { fprintf(yyout, "OCTAL: %s\n", yytext); }
+
+{STRINGLIT}      { fprintf(yyout, "STRING: %s\n", yytext); }
+{CHARLIT}        { fprintf(yyout, "CHAR: %s\n", yytext); }
+"=="| "!="| "<="| ">="    { fprintf(yyout, "OPERATOR: %s\n", yytext); }
+"&&"| "||"                { fprintf(yyout, "OPERATOR: %s\n", yytext); }
+"<<"| ">>"                { fprintf(yyout, "OPERATOR: %s\n", yytext); }
+"++"| "--"                { fprintf(yyout, "OPERATOR: %s\n", yytext); }
+"+="| "-="| "*="| "/="| "%=" { fprintf(yyout, "OPERATOR: %s\n", yytext); }
+"&="| "|="| "^="          { fprintf(yyout, "OPERATOR: %s\n", yytext); }
+"<<="| ">>="              { fprintf(yyout, "OPERATOR: %s\n", yytext); }
+{SIMPLEOP}  { fprintf(yyout, "OPERATOR: %s\n", yytext); }
+{SEPARATOR}      { fprintf(yyout, "SEPARATOR: %s\n", yytext); }
+
+{ID}             { fprintf(yyout, "IDENTIFIER: %s\n", yytext); }
+
+{LINECOMMENT}    { }
+{BLOCKCOMMENT}   { }
+
+[ \t\n]          { }
+
+. { fprintf(yyout, "ERROR: %s\n", yytext); }
+%%
+
+int main() {
+
+
+    yyin = fopen("C:\\Users\\namis\\Downloads\\flex\\archivoentrada.cpp", "r");
+    yyout = fopen("C:\\Users\\namis\\Downloads\\flex\\MyScanner.txt", "w");
+
+    yylex();
+
+    fclose(yyin);
+    fclose(yyout);
+    return 0;
+
+}
