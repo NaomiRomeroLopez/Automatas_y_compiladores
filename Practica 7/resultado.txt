@@ -1,0 +1,6 @@
+Analizando archivo CORRECTO:
+Análisis sintáctico correcto.
+
+Analizando archivo INCORRECTO:
+Error sintáctico: syntax error
+Análisis sintáctico con errores.
