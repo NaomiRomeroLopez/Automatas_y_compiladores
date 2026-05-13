@@ -1,0 +1,40 @@
+--- ANALIZANDO ARCHIVO CORRECTO ---
+[Línea 1]: Sentencia válida.
+[Línea 2]: Sentencia válida.
+[Línea 3]: Sentencia válida.
+[Línea 4]: Sentencia válida.
+[Línea 5]: Sentencia válida.
+[Línea 6]: Sentencia válida.
+[Línea 7]: Sentencia válida.
+[Línea 8]: Sentencia válida.
+[Línea 9]: Sentencia válida.
+[Línea 10]: Sentencia válida.
+[Línea 11]: Sentencia válida.
+[Línea 12]: Sentencia válida.
+
+>>> RESULTADO FINAL: Análisis Exitoso.
+
+--- ANALIZANDO ARCHIVO INCORRECTO ---
+[Línea 1] Error sintáctico cerca de 'FROM': syntax error
+[Línea 1]: Sentencia inválida.
+[Línea 2]: Sentencia válida.
+[Línea 3] Error sintáctico cerca de 'nombre': syntax error
+[Línea 3]: Sentencia inválida.
+[Línea 4] Error sintáctico cerca de 'ventas': syntax error
+[Línea 4]: Sentencia inválida.
+[Línea 5] Error sintáctico cerca de 'WHERE': syntax error
+[Línea 5]: Sentencia inválida.
+[Línea 6] Error sintáctico cerca de 'productos': syntax error
+[Línea 6]: Sentencia inválida.
+[Línea 7]: Sentencia válida.
+[Línea 8] Error sintáctico cerca de 'Juan': syntax error
+[Línea 8]: Sentencia inválida.
+[Línea 9] Error sintáctico cerca de 'FROM': syntax error
+[Línea 9]: Sentencia inválida.
+[Línea 10]: Sentencia válida.
+[Línea 11] Error sintáctico cerca de 'SET': syntax error
+[Línea 11]: Sentencia inválida.
+[Línea 12] Error sintáctico cerca de 'WHERE': syntax error
+[Línea 12]: Sentencia inválida.
+
+>>> RESULTADO FINAL: Se encontraron errores.
