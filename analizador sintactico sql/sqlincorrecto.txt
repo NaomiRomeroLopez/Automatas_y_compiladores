@@ -1,0 +1,12 @@
+SELECT FROM usuarios;
+INSERT INTO productos (nombre) VALUES (mesa);
+UPDATE clientes nombre = 'Ana';
+DELETE ventas WHERE id = 5;
+SELECT * WHERE id = 10;
+INSERT productos VALUES ('Cama', 200);
+UPDATE productos SET precio = 'caro' WHERE id = 1;
+DELETE FROM usuarios WHERE nombre Juan;
+SELECT nombre, FROM empleados;
+INSERT INTO clientes (id, nombre) VALUES (1);
+UPDATE SET stock = 10 WHERE id = 2;
+SELECT * FROM WHERE precio > 100;

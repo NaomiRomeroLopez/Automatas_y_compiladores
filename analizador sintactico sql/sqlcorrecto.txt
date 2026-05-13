@@ -1,0 +1,12 @@
+SELECT * FROM usuarios;
+SELECT nombre, email FROM clientes WHERE ciudad = 'Madrid';
+INSERT INTO productos (nombre, precio) VALUES ('Silla', 500);
+INSERT INTO empleados (nombre, puesto) VALUES ('Ana', 'Diseñadora');
+UPDATE clientes SET nombre = 'Juan' WHERE id = 1;
+UPDATE productos SET precio = 450 WHERE categoria = 'Muebles';
+DELETE FROM ventas WHERE id = 10;
+DELETE FROM mensajes WHERE leido = 0;
+SELECT nombre FROM productos WHERE precio > 100;
+INSERT INTO categorias (id, nombre) VALUES (5, 'Electrónica');
+UPDATE pedidos SET estado = 'Enviado' WHERE pedido_id = 45;
+DELETE FROM sesiones WHERE fecha < '2024-01-01';
