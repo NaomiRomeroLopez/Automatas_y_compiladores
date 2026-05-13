@@ -1,5 +1,0 @@
-SELECT * FROM usuarios
-INSERT INTO productos (nombre, precio) VALUES (silla, 500)
-UPDATE clientes SET nombre = juan
-DELETE FROM ventas WHERE id = 10
-SELECT FROM incorrecto  -- Esta fallará
